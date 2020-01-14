@@ -58,7 +58,7 @@ plugins:
 author:
   name   : "Marina Zafiris"
   avatar : "/assets/images/bio.jpg"
-  bio    : "Data Science Portfolio"
+  bio    : "Data Science Portfolio, constant work in progress"
   links:
     - label: "LinkedIn"
       icon: "fas fa-fw fa-link"
