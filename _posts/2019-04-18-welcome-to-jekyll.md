@@ -63,7 +63,7 @@ lm.2
 plot(lm.2)
 ```
 
-#Data Cleaning
+Data Cleaning
 Most of the time, the dataset will have lot of anomalies, such as outliers. In order to ensure, accurate analysis we must conduct outlier treatment and feature treatment.
 An outlier is an observation that lies an abnormal distance from other values in a random sample. Bellow we display how to eliminatemate certain outliers utilizing Cooks Distance Method. Any points that lay above the approximate 3rd Quartile Range of Distance from the median will be eliminated, in essences deleting the rows that contain anomaly data.
 
@@ -90,11 +90,10 @@ DataNew = cbind.data.frame(y.trans1, x.new)
 
 This reduces our new dataset to 387 observations.
 
-# Variable Selection
+Variable Selection
 We are utilizing ols_step_best_subset in order to select the "best" or most important" subset from a large pool of candidate regressor variables. Our main purpose is to remove redundant regressors.
 
-```{r,echo=FALSE}
-
+```r
 ols_step_best_subset(lm( y.trans1 ~ . , data= DataNew) )
 #plot(ols_step_best_subset(lm(y.trans1~., data.new1) ) )
 ```
@@ -114,9 +113,9 @@ The above regressor test displays a model (y~x2+x6+x7) with regressors x1, x6. T
 $\hat{y} =  -1.421259 + 0.005138x_{2} + 0.176941x_{6} + 0.043022x_{7}$
 
 The above regressor test displays a model (y~x2+x3+x6+x7) with regressors x1, x6. The linear model is as follows:
-$y =  -1.273251 + 0.004552x_{2} + 0.015771x_{3} + 0.161662x_{6} + 0.037628x_{7}$  
+y =  -1.273251 + 0.004552x2 + 0.015771x3 + 0.161662x6 + 0.037628x7  
 
-#Comparing Models
+Comparing Models
 
 Original Model
 ```r
@@ -174,7 +173,7 @@ The R^2 of Model 3 is 0.9421.
 
 The greatest R^2 value is of Model 3, however the difference is almost negligible. And our goal is to almost always find the most simple model for our dataset, usually leading us to the model with the least amount of regressors. Hence, why the OLS listed model one as the best choice
 
-  In comparing, our models to outside datasets its safe to assume that GRE Scores is of more importance to U.S based schools for graduate admission than TOEFL schools. The GRE is a graduate school entrance exam while the TOEFL is a test of your English language skills. Schools want to see GRE scores to ensure proper handling of graduate-level coursework. In contrast, TOEFL scores reflect your English skills and your ability to perform at an English-speaking school. The two scores could display similar trends and display multicollinearity. Hence, why none of the three models contain both X1 (GRE) and X2 (TOEFL).
+In comparing, our models to outside datasets its safe to assume that GRE Scores is of more importance to U.S based schools for graduate admission than TOEFL schools. The GRE is a graduate school entrance exam while the TOEFL is a test of your English language skills. Schools want to see GRE scores to ensure proper handling of graduate-level coursework. In contrast, TOEFL scores reflect your English skills and your ability to perform at an English-speaking school. The two scores could display similar trends and display multicollinearity. Hence, why none of the three models contain both X1 (GRE) and X2 (TOEFL).
 
 Due to this assumption, the most comprisable model is Model 2, so our final linear model is
 $\hat{y} =  -2.068708 + 0.003742x_{1} + 0.181215x_{6}$
@@ -198,7 +197,7 @@ corr.test(DataNew[1:7])
 pairs.panels(DataNew[1:7])
 ```
 
-# Confidence Intervals of Regressors
+Confidence Intervals of Regressors
 Now we will find the 95% confidence interval for x1 (GRE Scores) and x6 (Cumulative GPA for our multiple linear regression model, y~x1+x6
 
 ```r
@@ -210,7 +209,7 @@ With our new model only containing x1 and x6, we are 95% confident that our coef
 
 
 
-# Neural Network
+Neural Network
 ```r
 #install.packages("caret")
 #install.packages("lattice")
@@ -219,12 +218,8 @@ library(neuralnet)
 library(ggplot2)
 library(caTools)
 library(caret)
-#------------------------------------------------------------------------------------------------------------#
-#                                                 Neural Network                                             #
-#------------------------------------------------------------------------------------------------------------#
 
-
-#start with Graduate Admission Dataset
+#Start with Graduate Admission Dataset
 
 
 dat = read.csv("C:/Users/Vasilis/Desktop/Spring 2019 UHD/Linear Regression/Admission.csv", header = TRUE)
@@ -232,21 +227,14 @@ class(dat)
 
 
 str(dat)
-# predicting chance low birth weight with the other predictors
-
 Binom_Admit = ifelse(dat$Chance.of.Admit > 0.72, 1, 0)
-
 head(Binom_Admit)
-
-
 
 dat_bw=cbind(dat[ , -9], Binom_Admit)
 
 #### All are integer, if not then we would have to convert
 #### with the as. function
 str(dat_bw)
-
-
 
 #-------------------------------------------------------------------------------#
 ####  To run a neural network it is best to normalize the data
