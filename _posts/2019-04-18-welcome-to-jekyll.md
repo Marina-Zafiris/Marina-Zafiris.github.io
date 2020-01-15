@@ -9,11 +9,7 @@ tags:
   - neural network
 ---
 
-The purpose of this research is to compare and find out
-which statistical/machine learning model is the best at
-predicting graduate admittance. The models, which were
-used and compared, were multiple linear regression, neural networks, and decision trees. Linear regression is based on the method of least squares that reduces the Mean Squared Error (MSE), which is attributed to Gauss and Legendre. Multiple linear regression involves using more than one independent variable to estimate the coefficients of the predictors for the function by best reducing error. From this, we can use those coefficients for our future models. One of
-the methods employed to best predict admittance is a Neural Network. Artificial neural networks are a composition of the processes of finding the parameter and the utilization of an error function, usually a sigmoid function. Decision Trees use a probabilistic modeling approach to classify predictors which results in one of the categories of outcomes.
+The purpose of this research is to compare and find out which statistical/machine learning model is the best at predicting graduate admittance. The models, which were used and compared, were multiple linear regression, neural networks, and decision trees. Linear regression is based on the method of least squares that reduces the Mean Squared Error (MSE), which is attributed to Gauss and Legendre. Multiple linear regression involves using more than one independent variable to estimate the coefficients of the predictors for the function by best reducing error. From this, we can use those coefficients for our future models. One of the methods employed to best predict admittance is a Neural Network. Artificial neural networks are a composition of the processes of finding the parameter and the utilization of an error function, usually a sigmoid function. Decision Trees use a probabilistic modeling approach to classify predictors which results in one of the categories of outcomes.
 
 Our objective is to examine and analyze student graduate admission based on GRE Scores, TOEFL Scores, University Ranking, Statement of Purpose (SOP), Letter of Recommendation (LOR), Academic Performance (GPA) and lastly, Projects and Research. The dependent variable (y) being Chance of Admission.
 
