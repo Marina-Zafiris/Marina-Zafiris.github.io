@@ -56,7 +56,7 @@ x.new <- data.3[,2:8]
 
 DataNew = cbind.data.frame(y.trans1, x.new)
 ```
-######Variable Selection
+###### Variable Selection
 We are utilizing ols_step_best_subset in order to select the "best" or most important" subset from a large pool of candidate regressor variables. Our main purpose is to remove redundant regressors.
 
 ```r
@@ -83,8 +83,8 @@ $$\hat{y} =  -1.421259 + 0.005138x_{2} + 0.176941x_{6} + 0.043022x_{7}$$
 The above regressor test displays a model (y~x2+x3+x6+x7). The linear model is as follows:
 $$\hat{y} =  -1.273251 + 0.004552x_{2} + 0.015771x_{3} + 0.161662x_{6} + 0.037628x_{7}$$
 
-####Comparing Models
-######Original Model
+#### Comparing Models
+###### Original Model
 ```r
 
 PRESS(lm( y.trans1~ . , data= DataNew))
@@ -96,7 +96,7 @@ ols_plot_resid_fit(lm(y.trans1~ . , data=DataNew))
 ```
 The VIF (variance inflation factor) of the adjusted all regressor model displays multicollinearity for X1 ad X6. The bellow models will account for this problem.
 
-######Model 1
+###### Model 1
 ```r
 
 PRESS(lm(y.trans1~x1+x6, data=DataNew))
@@ -108,7 +108,7 @@ ols_test_normality(lm(y.trans1~x1+x6, data=DataNew))
 ols_plot_resid_fit(lm(y.trans1~x1+x6, data=DataNew))
 ```
 
-######Model 2
+###### Model 2
 ```r
 
 PRESS(lm(y.trans1~x2+x6+x7, data=DataNew))
@@ -120,7 +120,7 @@ ols_test_normality(lm(y.trans1~x2+x6+x7, data=DataNew))
 ols_plot_resid_fit(lm(y.trans1~x2+x6+x7, data=DataNew))
 ```
 
-######Model 3
+###### Model 3
 ```r
 
 PRESS(lm(y.trans1~x2+x3+x6+x7, data=DataNew))
@@ -134,16 +134,18 @@ ols_plot_resid_fit(lm(y.trans1~x2+x3+x6+x7, data=DataNew))
 
 All of our models look exceptionally good. The VIF's of all three models state there is no multi-collinearity present amongst the regressors of each model.
 Lets compare the R^2 values given by the ols_step_best_subset:
--The R^2 of Model 1 is 0.9249.
--The R^2 of Model 2 is 0.9359.
--The R^2 of Model 3 is 0.9421.
+- The R^2 of Model 1 is 0.9249.
+- The R^2 of Model 2 is 0.9359.
+- The R^2 of Model 3 is 0.9421.
 
 The greatest R^2 value is of Model 3, however the difference is almost negligible. And our goal is to almost always find the most simple model for our dataset, usually leading us to the model with the least amount of regressors. Hence, why the OLS listed model one as the best choice
 
 In comparing, our models to outside datasets its safe to assume that GRE Scores is of more importance to U.S based schools for graduate admission than TOEFL schools. The GRE is a graduate school entrance exam while the TOEFL is a test of your English language skills. Schools want to see GRE scores to ensure proper handling of graduate-level coursework. In contrast, TOEFL scores reflect your English skills and your ability to perform at an English-speaking school. The two scores could display similar trends and display multicollinearity. Hence, why none of the three models contain both X1 (GRE) and X2 (TOEFL).
 
 Due to this assumption, the most comprisable model is Model 2, so our final linear model is
-$$\hat{y} =  -2.068708 + 0.003742x_{1} + 0.181215x_{6}$$
+$$
+\hat{y} =  -2.068708 + 0.003742x_{1} + 0.181215x_{6}
+$$
 
 For every unit change in GRE Score $$x_{1}$$ leads to a positive 0.003742 change in $$\hat{y}$$, holding all other variables constant. For every unit change in Cumulative GPA $$x_{6}$$ leads to a positive 0.181215 change in y, holding all other variables constant.
 
@@ -153,7 +155,7 @@ summary(fit)
 ```
 
 The summary of the fitted linear model displays all the regressors having a p-value of <2e-16, which is smaller than α of 0.05. We reject Ho and conclude that there is a significant linear relationship between Chance of Admission and GRE Scores and Cumulative GPA.
-In addition, with p-value = $$<2*10^{-16}$$, we reject H0 : β0 = 0(or no-intercept model).
+In addition, with p-value = $$<2*10^{-16}$$; we reject H0 : β0 = 0(or no-intercept model).
 Our Residual standard error -  σˆ = 0.04121.
 The model displays a Multiple R^2 value of 0.9249, reflecting that approximately 92.5% of the variance in Admission Rate is explained by Gre Scores and Cumulative GPA.
 
@@ -164,7 +166,7 @@ corr.test(DataNew[1:7])
 pairs.panels(DataNew[1:7])
 ```
 
-######Confidence Intervals of Regressors
+###### Confidence Intervals of Regressors
 Now we will find the 95% confidence interval for x1 (GRE Scores) and x6 (Cumulative GPA for our multiple linear regression model, y~x1+x6
 
 ```r
