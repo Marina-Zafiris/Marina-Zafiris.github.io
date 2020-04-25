@@ -293,8 +293,8 @@ e
 
 ![Neural Network Graph](images/Grad Admissions/NNGrad.png)
 
-####Decision Tree
-######Decision Tree (all regressors)
+#### Decision Tree
+###### Decision Tree (all regressors)
 ```r
 # Decision Tree for Model 1 (all regressors)
 library(C50)
@@ -316,11 +316,10 @@ plot(m1)
 ![Decision Tree All Regressor](./images/Grad Admissions/Decision Tree All.jpg)
 ![Decision Tree All Accuracy](./images/Grad Admissions/Decision Tree Accuracy All.png)
 
-######Decision Tree (TOEFL, GPA, Projects and Research)
+###### Decision Tree (TOEFL, GPA, Projects and Research)
 x2 - TOEFL Score
 x6 - Academic Performance (GPA)
 x7 - Projects and Research
-
 ```r
 # Decision tree for model 2 (x2, x6, x7)
 library(C50)
