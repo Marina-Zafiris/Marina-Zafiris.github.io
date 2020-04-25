@@ -313,8 +313,8 @@ table(DataR[401:500, 9], predicted = p1)
 # Plotting M1
 plot(m1)
 ```
-![Decision Tree All Regressor](images/Grad Admissions/Decision Tree All.jpg)
-![Decision Tree All Accuracy](images/Grad Admissions/Decision Tree Accuracy All.png)
+![Decision Tree All Regressor](./images/Grad Admissions/Decision Tree All.jpg)
+![Decision Tree All Accuracy](./images/Grad Admissions/Decision Tree Accuracy All.png)
 
 ######Decision Tree (TOEFL, GPA, Projects and Research)
 x2 - TOEFL Score
@@ -345,5 +345,5 @@ table(DataR[401:500, 4], predicted = p1)
 # Plotting M1
 plot(m1)
 ```
-![Decision Tree All Regressor](images/Grad Admissions/Decision Tree All.jpg)
-![Decision Tree All Accuracy](images/Grad Admissions/Decision Tree Accuracy All.png)
+![Decision Tree All Regressor](./images/Grad Admissions/Decision Tree All.jpg)
+![Decision Tree All Accuracy](./images/Grad Admissions/Decision Tree Accuracy All.png)
