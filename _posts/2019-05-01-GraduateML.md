@@ -317,9 +317,9 @@ plot(m1)
 ![Decision Tree All Accuracy](./images/Grad Admissions/Decision Tree Accuracy All.png)
 
 ###### Decision Tree (TOEFL, GPA, Projects and Research)
-x2 - TOEFL Score
-x6 - Academic Performance (GPA)
-x7 - Projects and Research
+- x2 - TOEFL Score
+- x6 - Academic Performance (GPA)
+- x7 - Projects and Research
 ```r
 # Decision tree for model 2 (x2, x6, x7)
 library(C50)
@@ -344,5 +344,5 @@ table(DataR[401:500, 4], predicted = p1)
 # Plotting M1
 plot(m1)
 ```
-![Decision Tree All Regressor](./images/Grad Admissions/Decision Tree All.jpg)
-![Decision Tree All Accuracy](./images/Grad Admissions/Decision Tree Accuracy All.png)
+![Decision Tree All Regressor](Decision Tree All.jpg)
+![Decision Tree All Accuracy](Decision Tree Accuracy All.png)
