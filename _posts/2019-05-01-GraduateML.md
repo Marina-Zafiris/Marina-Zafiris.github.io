@@ -347,4 +347,4 @@ plot(m1)
 ```
 
 ![Decision Tree All Regressor](Decision Tree All.jpg)
-![Decision Tree All Accuracy](assets/images/Grad Admissions/two_regressors_accuracy.png)
+![Decision Tree All Accuracy](assets/images/Grad_Admissions/two_regressors_accuracy.png)
