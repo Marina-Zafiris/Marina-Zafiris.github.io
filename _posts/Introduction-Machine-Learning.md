@@ -10,18 +10,18 @@ tags:
   - neural network
 ---
 
-Loss function (Decision making)
-Gradient Descent, stochastic gradient descent (express how that the minimization of the above chosen loss function)
+#Loss function (Decision making) and Gradient Descent, stochastic gradient descent (express how that the minimization of the above chosen loss function)
+
 Algorithms
   -Supervised
     ~Classification
       (1)Perceptron
-      (2)Decision Tree
+      (2) K-nearest Neighbors
     ~Regression
-      (3)Linear
+#      (3)Linear
       (4)Logistic
   -Unsupervised
     ~Clustering
-      (5)K-nearest Neighbors
+      (5) k-means
     ~Dimensionality Reduction
       (6)PCA
