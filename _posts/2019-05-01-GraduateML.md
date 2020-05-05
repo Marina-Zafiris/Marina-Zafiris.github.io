@@ -346,7 +346,4 @@ table(DataR[401:500, 4], predicted = p1)
 plot(m1)
 ```
 
-![Decision Tree All Regressor](Decision Tree All.jpg){:class="img-responsive"}
-![Decision Tree All Accuracy](assets/images/Grad Admissions/two_regressors_accuracy.png)
-
-![alt text](assets/images/Grad Admissions/Decision Tree All.jpg "Decision Tree All Regressor")
+![alt text](assets/images/Grad Admissions/Decision Tree All.jpg "Decision Tree All Regressor"){:class="img-responsive"}

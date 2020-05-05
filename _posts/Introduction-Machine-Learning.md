@@ -25,3 +25,6 @@ Algorithms
       (5) k-means
     ~Dimensionality Reduction
       (6)PCA
+
+      ![Decision Tree All Regressor](Decision Tree All.jpg){:class="img-responsive"}
+      ![Decision Tree All Accuracy](assets/images/Grad Admissions/two_regressors_accuracy.png)
